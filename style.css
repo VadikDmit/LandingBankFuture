@@ -290,6 +290,11 @@ h1 {
         gap: 40px;
     }
 
+    .use-cases-header {
+        position: static;
+        top: auto;
+    }
+
     .case-card {
         grid-template-columns: 1fr;
         padding: 30px;
