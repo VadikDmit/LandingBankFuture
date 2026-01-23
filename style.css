@@ -441,28 +441,74 @@ h1 {
 }
 
 .logos-section {
-    padding: 4rem 0 6rem;
+    padding: 2rem 0 6rem;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
 }
 
 .logos-title {
     color: #999;
     font-size: 0.9rem;
-    margin-bottom: 2rem;
-    max-width: 200px;
+    margin-bottom: 0;
+    max-width: 250px;
+    line-height: 1.4;
 }
 
 .logos-grid {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     gap: 4rem;
-    opacity: 0.6;
+    flex: 1;
 }
 
 .partner-logo {
-    font-weight: 700;
-    font-size: 1.25rem;
-    letter-spacing: -0.02em;
+    opacity: 0.4;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+}
+
+.partner-logo:hover {
+    opacity: 1;
+}
+
+.partner-logo img {
+    height: 28px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+    filter: grayscale(1);
+    transition: var(--transition);
+}
+
+.logo-renaissance img {
+    height: 32px;
+}
+
+.logo-virtu img {
+    height: 40px;
+}
+
+.logo-pravocard img {
+    height: 34px;
+}
+
+.logo-finam img {
+    height: 38px;
+}
+
+.logo-bold img {
+    height: 34px;
+}
+
+.partner-logo:hover img {
+    filter: grayscale(0);
 }
 
 /* Responsive */
