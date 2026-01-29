@@ -590,12 +590,14 @@ h1 {
 
 /* Product Detail Page Styles */
 .product-page {
-    background-color: var(--bg-white);
+    background-color: #F5F5F5;
 }
 
 .product-hero {
-    padding: 100px 0 60px;
-    background: linear-gradient(180deg, #f9fafb 0%, #fff 100%);
+    height: 650px;
+    display: flex;
+    align-items: center;
+    background: #F5F5F5;
     text-align: center;
 }
 
