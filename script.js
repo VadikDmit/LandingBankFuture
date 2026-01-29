@@ -1,30 +1,22 @@
-// Intersection Observer for Scroll Reveal Animations
 document.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-    };
+    const tabs = document.querySelectorAll('.tab');
+    const featureImage = document.getElementById('feature-image');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                // Once element is revealed, we can stop observing it
-                observer.unobserve(entry.target);
-            }
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            tab.classList.add('active');
+
+            // Switch image with fade effect
+            const newSrc = tab.getAttribute('data-image');
+            featureImage.style.opacity = '0';
+
+            setTimeout(() => {
+                featureImage.src = newSrc;
+                featureImage.style.opacity = '1';
+            }, 300);
         });
-    }, observerOptions);
-
-    const revealElements = document.querySelectorAll('.reveal');
-    revealElements.forEach(el => observer.observe(el));
-
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
     });
 });
