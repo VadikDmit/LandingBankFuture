@@ -742,6 +742,120 @@ h1 {
     }
 }
 
+/* Features Grid Section */
+.features-section {
+    padding: 60px 0 120px;
+    background-color: #fff;
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.feature-item {
+    border-radius: 32px;
+    padding: 2.5rem;
+    width: calc(33.333% - 16px);
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    cursor: default;
+}
+
+.feature-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.feature-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    max-width: 80%;
+    color: #000;
+}
+
+.arrow-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    transition: var(--transition);
+}
+
+.feature-item:hover .arrow-icon {
+    background: #000;
+    color: #fff;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: auto;
+}
+
+/* Card Backgrounds */
+.bg-soft-blue {
+    background-color: #F4F7FF;
+}
+
+.bg-soft-yellow {
+    background-color: #FFFCE8;
+}
+
+.bg-soft-pink {
+    background-color: #FFF2F9;
+}
+
+.bg-soft-green {
+    background-color: #F0FAF0;
+}
+
+.bg-soft-gray {
+    background-color: #F7F7F7;
+}
+
+/* 3+2 Layout adjustment */
+.features-grid .feature-item:nth-child(4),
+.features-grid .feature-item:nth-child(5) {
+    width: calc(40% - 12px);
+}
+
+@media (max-width: 1024px) {
+    .feature-item {
+        width: calc(50% - 12px);
+    }
+
+    .features-grid .feature-item:nth-child(4),
+    .features-grid .feature-item:nth-child(5) {
+        width: calc(50% - 12px);
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-item {
+        width: 100% !important;
+        min-height: auto;
+    }
+}
+
 .product-section h2 {
     font-size: 2.5rem;
     margin-bottom: 3rem;
