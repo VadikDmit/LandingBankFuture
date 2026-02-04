@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИИ-консультант | BankFuture</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .consultant-hero {
+            padding: 160px 0 120px;
+            text-align: center;
+            background-color: #F8F9FA;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .consultant-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .consultant-pill {
+            background: #fff;
+            padding: 8px 24px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 2.5rem;
+            display: inline-block;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .consultant-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: #111;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.03em;
+            text-transform: none;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .consultant-hero p {
+            font-size: 1.25rem;
+            color: #555;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Features Section */
+        .consultant-features {
+            padding: 100px 0;
+            background-color: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: #F8F9FA;
+            padding: 3rem;
+            border-radius: 32px;
+            text-align: left;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: #fff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+            border-color: rgba(198, 12, 127, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #111;
+            margin: 0;
+        }
+
+        /* Business Effect Section */
+        .business-effect {
+            padding: 100px 0;
+            background-color: #f0f2f5;
+        }
+
+        .effect-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 4rem;
+            color: #000;
+        }
+
+        .effect-list {
+            max-width: 800px;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+        }
+
+        .effect-item {
+            background: #fff;
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            transition: var(--transition);
+        }
+
+        .effect-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .effect-item::before {
+            content: "✦";
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .effect-text {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .effect-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="product-page">
+    <nav class="navbar scrolled">
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+                    <img src="logo_big.svg" alt="BankFuture Logo" height="40">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#products">Продукты</a></li>
+                <li><a href="index.html#about">О нас</a></li>
+                <li><a href="index.html#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="consultant-hero">
+        <div class="consultant-container">
+            <span class="consultant-pill">ИИ-консультант</span>
+            <h1>ИИ-консультант для клиентов финансовых организаций</h1>
+            <p>ИИ-консультант BankFuture — это интеллектуальный Telegram-бот, который 24/7 консультирует клиентов по
+                финансовым продуктам, объясняет сложные условия простым языком и снижает нагрузку на службу поддержки.
+            </p>
+        </div>
+    </header>
+
+    <section class="consultant-features">
+        <div class="consultant-container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🤖</span>
+                    <h3>Консультации 24/7 без ожидания</h3>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🧠</span>
+                    <h3>Глубокое понимание финансовых продуктов</h3>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">💬</span>
+                    <h3>Работа через Telegram</h3>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📉</span>
+                    <h3>Снижение нагрузки на контакт-центр</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="business-effect">
+        <div class="consultant-container">
+            <h2 class="effect-title">Бизнес-эффект</h2>
+            <div class="effect-list">
+                <div class="effect-item">
+                    <span class="effect-text">Повышение качества клиентского сервиса</span>
+                </div>
+                <div class="effect-item">
+                    <span class="effect-text">Рост доверия и лояльности клиентов</span>
+                </div>
+                <div class="effect-item">
+                    <span class="effect-text">Быстрые и точные ответы без участия операторов</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 60px 0; text-align: center; border-top: 1px solid #eee; background: #fff;">
+        <div class="container">
+            <p>&copy; 2026 BankFuture. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
