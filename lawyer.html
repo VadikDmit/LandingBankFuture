@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Lawyer | BankFuture — Юридический интеллект</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --lawyer-accent: #C60C7F;
+            --lawyer-bg: #fff;
+            --lawyer-text: #111;
+            --lawyer-muted: #555;
+            --lawyer-glass: rgba(255, 255, 255, 0.7);
+            --lawyer-border: rgba(0, 0, 0, 0.08);
+        }
+
+        body.lawyer-page {
+            background-color: var(--lawyer-bg);
+            color: var(--lawyer-text);
+        }
+
+        .lawyer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .lawyer-hero {
+            padding: 180px 0 120px;
+            background-color: #F5F5F5;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .lawyer-pill {
+            background: #fff;
+            padding: 8px 24px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 2.5rem;
+            display: inline-block;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--lawyer-border);
+        }
+
+        .lawyer-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.04em;
+            color: #111;
+            text-transform: none;
+        }
+
+        .lawyer-hero p {
+            font-size: 1.25rem;
+            color: var(--lawyer-muted);
+            line-height: 1.6;
+            margin-bottom: 0;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Problem Section */
+        .lawyer-problem {
+            padding: 140px 0;
+            background: #fff;
+        }
+
+        .section-tag {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #999;
+            margin-bottom: 1.5rem;
+            display: block;
+            text-transform: none;
+        }
+
+        .lawyer-problem h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 4rem;
+            letter-spacing: -0.03em;
+            color: #111;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem 80px;
+            margin-top: 2rem;
+        }
+
+        .problem-card {
+            padding: 0;
+            border-radius: 0;
+            background: transparent;
+            border: none;
+            transition: none;
+        }
+
+        .problem-card:hover {
+            transform: none;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .problem-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #111;
+        }
+
+        .problem-card p {
+            font-size: 1.05rem;
+            color: var(--lawyer-muted);
+            line-height: 1.6;
+        }
+
+        /* Solution Section */
+        .lawyer-solution {
+            padding: 120px 0;
+            background: #F8F9FA;
+        }
+
+        .solution-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .solution-content h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .solution-content p {
+            font-size: 1.2rem;
+            color: var(--lawyer-muted);
+            line-height: 1.7;
+        }
+
+        .solution-visual {
+            height: 500px;
+            background: #fff;
+            border-radius: 48px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid var(--lawyer-border);
+        }
+
+        /* Features Section */
+        .lawyer-features {
+            padding: 120px 0;
+            background: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            padding: 3rem;
+            border-radius: 40px;
+            background: #fff;
+            border: 1px solid var(--lawyer-border);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            border-color: var(--lawyer-accent);
+            box-shadow: 0 15px 30px rgba(198, 12, 127, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: var(--lawyer-muted);
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .lawyer-btn {
+            padding: 1.2rem 2.5rem;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--lawyer-accent);
+            color: #fff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(198, 12, 127, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #111;
+            border: 1px solid var(--lawyer-border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 0, 0, 0.02);
+            border-color: #111;
+        }
+
+        @media (max-width: 1024px) {
+
+            .solution-split,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                gap: 1.5rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="product-page lawyer-page">
+    <nav class="navbar scrolled">
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+                    <img src="logo_big.svg" alt="BankFuture Logo" height="40">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html#products">Продукты</a></li>
+                <li><a href="index.html#about">О нас</a></li>
+                <li><a href="index.html#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="lawyer-hero">
+        <div class="lawyer-container hero-content">
+            <span class="section-tag" style="margin-left: auto; margin-right: auto; text-align: center;">AI
+                Lawyer</span>
+            <h1>Юридический интеллект, который работает вместе с вами</h1>
+            <p>Ваш цифровой помощник анализирует вопрос клиента, находит нужные законы, оценивает риски и готовит
+                документы — пока вы занимаетесь тем, что действительно требует вашего опыта.</p>
+        </div>
+    </header>
+
+    <section class="lawyer-problem">
+        <div class="lawyer-container">
+            <span class="section-tag">Знакомая ситуация?</span>
+            <h2>Проблемы, которые мы решаем</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Часы на поиск нужной статьи</h3>
+                    <p>Клиент задал вопрос — и вы вручную перебираете кодексы, чтобы найти именно ту норму, которая
+                        подходит к его ситуации. А потом ещё раз — чтобы убедиться, что ничего не упустили.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Каждый документ — с нуля</h3>
+                    <p>Претензия, исковое заявление, жалоба — каждый раз вы тратите время на оформление, проверяя
+                        реквизиты и формулировки, хотя суть работы давно понятна.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Судебная практика разбросана</h3>
+                    <p>Чтобы оценить шансы клиента, нужно просмотреть десятки решений судов. Без уверенности, что нашли
+                        все ключевые прецеденты.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Сроки и госпошлины путаются</h3>
+                    <p>Какой срок исковой давности? Сколько платить за обращение в суд? Куда именно подавать? Каждый раз
+                        приходится перепроверять актуальные данные.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lawyer-solution">
+        <div class="lawyer-container">
+            <div class="solution-split">
+                <div class="solution-content">
+                    <span class="section-tag">КАК ЭТО МЕНЯЕТ ВАШУ РАБОТУ</span>
+                    <h2>Один вопрос — полная юридическая картина</h2>
+                    <p>Вы описываете ситуацию клиента обычным языком. Система сама определяет область права, находит
+                        применимые нормы, проверяет их актуальность, рассчитывает сроки и пошлины, анализирует судебную
+                        практику — и собирает всё в готовый структурированный ответ. Вам остаётся проверить и отдать
+                        клиенту.</p>
+                </div>
+                <div class="solution-visual">
+                    <img src="/Users/vadimdmitriev/.gemini/antigravity/brain/c0f4be97-926f-4a33-9b2d-a2ca67388599/lawyer_hero_visual_1770301213584.png"
+                        alt="Juridical Intelligence"
+                        style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lawyer-features">
+        <div class="lawyer-container">
+            <span class="section-tag">ВОЗМОЖНОСТИ</span>
+            <h2 style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem;">Всё, что нужно юристу — в одном окне
+            </h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🔍</span>
+                    <h3>Мгновенный анализ запроса</h3>
+                    <p>Опишите проблему клиента — система определит область права, выделит ключевые обстоятельства и
+                        выберет оптимальную стратегию рассмотрения.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⚖️</span>
+                    <h3>Точные ссылки на законы</h3>
+                    <p>Автоматический поиск по всем кодексам и федеральным законам РФ. Вы получаете конкретные статьи с
+                        полным текстом.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🛡️</span>
+                    <h3>Проверка на актуальность</h3>
+                    <p>Каждая найденная норма проверяется: действует ли она сейчас, нет ли исключений или новых
+                        поправок.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📅</span>
+                    <h3>Сроки, пошлины, порядок действий</h3>
+                    <p>Расчет сроков исковой давности, госпошлины и составление пошагового плана действий с указанием
+                        органов.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔨</span>
+                    <h3>Анализ судебной практики</h3>
+                    <p>Оценка шансов на основе реальных решений судов. Вы видите аргументы, которые работали в
+                        аналогичных делах.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📄</span>
+                    <h3>Готовые юридические документы</h3>
+                    <p>Исковые заявления, претензии, жалобы — система подготовит проект документа с учётом всех норм и
+                        обстоятельств.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 60px 0; border-top: 1px solid var(--lawyer-border); text-align: center;">
+        <div class="lawyer-container">
+            <p style="font-weight: 700; margin-bottom: 2rem; font-size: 1.2rem;">AI Lawyer — юридический интеллект для
+                профессионалов</p>
+            <p style="font-size: 0.85rem; color: #999; max-width: 800px; margin: 0 auto;">Информация, предоставляемая
+                системой, носит справочный характер и не является юридической консультацией. Ответственность за
+                принимаемые решения несёт специалист.</p>
+            <p style="margin-top: 2rem; color: #999;">&copy; 2026 BankFuture. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
