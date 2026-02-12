@@ -863,19 +863,9 @@ h1 {
     background-color: #F7F7F7;
 }
 
-/* 3+2 Layout adjustment */
-.features-grid .feature-item:nth-child(4),
-.features-grid .feature-item:nth-child(5) {
-    width: calc(40% - 12px);
-}
-
+/* Responsive widths */
 @media (max-width: 1024px) {
     .feature-item {
-        width: calc(50% - 12px);
-    }
-
-    .features-grid .feature-item:nth-child(4),
-    .features-grid .feature-item:nth-child(5) {
         width: calc(50% - 12px);
     }
 }
