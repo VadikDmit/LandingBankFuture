@@ -781,9 +781,8 @@ h1 {
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 24px;
-    justify-items: stretch;
 }
 
 .feature-item {
@@ -794,6 +793,19 @@ h1 {
     flex-direction: column;
     transition: var(--transition);
     cursor: default;
+}
+
+/* Top row: 3 equal cards */
+.features-grid .feature-item:nth-child(1),
+.features-grid .feature-item:nth-child(2),
+.features-grid .feature-item:nth-child(3) {
+    grid-column: span 4;
+}
+
+/* Bottom row: 2 full-width cards */
+.features-grid .feature-item:nth-child(4),
+.features-grid .feature-item:nth-child(5) {
+    grid-column: 1 / -1;
 }
 
 .feature-item:hover {
@@ -866,6 +878,10 @@ h1 {
     .features-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    .features-grid .feature-item {
+        grid-column: auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -873,7 +889,8 @@ h1 {
         grid-template-columns: 1fr;
     }
 
-    .feature-item {
+    .features-grid .feature-item {
+        grid-column: auto;
         min-height: auto;
     }
 }
