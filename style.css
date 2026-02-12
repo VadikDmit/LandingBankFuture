@@ -780,16 +780,15 @@ h1 {
 }
 
 .features-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
-    justify-content: center;
+    justify-items: stretch;
 }
 
 .feature-item {
     border-radius: 32px;
     padding: 2.5rem;
-    width: calc(33.333% - 16px);
     min-height: 280px;
     display: flex;
     flex-direction: column;
@@ -863,16 +862,18 @@ h1 {
     background-color: #F7F7F7;
 }
 
-/* Responsive widths */
 @media (max-width: 1024px) {
-    .feature-item {
-        width: calc(50% - 12px);
+    .features-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
     .feature-item {
-        width: 100% !important;
         min-height: auto;
     }
 }
