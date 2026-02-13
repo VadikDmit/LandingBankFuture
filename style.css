@@ -795,17 +795,17 @@ h1 {
     cursor: default;
 }
 
-/* Top row: 3 equal cards */
+/* Верхний ряд: три карточки одинаковой ширины */
 .features-grid .feature-item:nth-child(1),
 .features-grid .feature-item:nth-child(2),
 .features-grid .feature-item:nth-child(3) {
     grid-column: span 4;
 }
 
-/* Bottom row: 2 full-width cards */
+/* Нижний ряд: две карточки рядом, каждая ~1/2 ширины контейнера */
 .features-grid .feature-item:nth-child(4),
 .features-grid .feature-item:nth-child(5) {
-    grid-column: 1 / -1;
+    grid-column: span 6;
 }
 
 .feature-item:hover {
