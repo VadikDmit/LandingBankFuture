@@ -1172,24 +1172,24 @@ h1 {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 60px;
-    align-items: center;
+    align-items: end;
 }
 
 .visual-pane .frame-container {
     background: #fff;
     border-radius: 40px;
-    padding: 40px;
+    padding: 24px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 500px;
+    justify-content: center;
+    height: 520px;
     overflow: hidden;
 }
 
 .visual-pane img {
-    width: 100%;
-    height: 100%;
+    max-height: 100%;
+    width: auto;
     object-fit: contain;
     border-radius: 20px;
     transition: opacity 0.5s ease;
