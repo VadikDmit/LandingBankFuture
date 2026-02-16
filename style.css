@@ -912,6 +912,10 @@ h1 {
     background: var(--primary);
 }
 
+.lk-section h2::after {
+    display: none;
+}
+
 .capabilities-section {
     background: #F5F5F5 !important;
 }
@@ -1188,11 +1192,16 @@ h1 {
 }
 
 .visual-pane img {
-    max-height: 100%;
-    width: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     border-radius: 20px;
     transition: opacity 0.5s ease;
+}
+
+/* Чуть уменьшаем первую картинку, чтобы визуально была как остальные */
+.visual-pane img[src*="Ai_Ad1"] {
+    transform: scale(0.9);
 }
 
 .content-pane h2 {
