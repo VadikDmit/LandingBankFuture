@@ -137,6 +137,17 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
+        .bb-card-visual--no-bg {
+            background: transparent;
+        }
+
+        .bb-card-visual--no-bg img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            box-shadow: none;
+        }
+
         .bb-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
@@ -411,7 +422,7 @@
 
     <header class="bb-hero">
         <div class="bb-container">
-            <span class="bb-pill">Bot Builder Engine</span>
+            <span class="bb-pill">Конструктор ботов</span>
             <h1>Конструктор ботов BankFuture</h1>
             <p>Создавайте персональных ИИ-ботов для консультаций, продаж и сопровождения клиентов — без программистов и
                 сложных настроек.</p>
@@ -425,7 +436,7 @@
                 <!-- Large Card -->
                 <div class="bb-card bb-card-large">
                     <div class="bb-card-content">
-                        <h3>🔹 Создание персональных ботов</h3>
+                        <h3>Создание персональных ботов</h3>
                         <p>В личном кабинете вы создаёте не «абстрактного» бота, а вашего цифрового представителя.</p>
                         <p><strong>При создании бота необходимо указать:</strong></p>
                         <ul>
@@ -436,9 +447,8 @@
                         </ul>
                         <p>Бот сразу начинает общаться с клиентами в выбранной манере и по заданной логике.</p>
                     </div>
-                    <div class="bb-card-visual">
-                        <img src="/Users/vadimdmitriev/.gemini/antigravity/brain/07382456-2318-4fcd-8519-c386ff07bf95/bot_creator_ui_1769786600736.png"
-                            alt="Bot Creator UI">
+                    <div class="bb-card-visual bb-card-visual--no-bg">
+                        <img src="assets/Create_bot.jpg" alt="Создание бота">
                     </div>
                 </div>
 

@@ -394,7 +394,7 @@ h1 {
 
 /* Divider Styles */
 .divider-section {
-    background-color: #F5F5F5;
+    background-color: #fff;
     padding: 0;
     overflow: hidden;
 }
@@ -703,13 +703,13 @@ h1 {
 }
 
 .product-section {
-    padding: 80px 0;
+    padding: 160px 0;
 }
 
 /* Ecosystem Section */
 .ecosystem-section {
-    padding: 120px 0;
-    background-color: transparent;
+    padding: 160px 0;
+    background-color: #fff;
 }
 
 .ecosystem-grid {
@@ -775,7 +775,7 @@ h1 {
 
 /* Features Grid Section */
 .features-section {
-    padding: 60px 0 120px;
+    padding: 160px 0;
     background-color: #fff;
 }
 
@@ -1034,8 +1034,8 @@ h1 {
 .security-section {
     background-color: #000;
     color: #fff;
-    padding: 80px;
-    margin: 40px 0;
+    padding: 160px 80px;
+    margin: 0;
 }
 
 .security-section h2::after {
@@ -1047,7 +1047,12 @@ h1 {
 }
 
 .security-section .feature-grid {
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+.security-section .feature-card:nth-child(3) {
+    margin-left: 40px;
 }
 
 .security-section .feature-card {
@@ -1066,15 +1071,22 @@ h1 {
 
 .security-section .feature-card h3 {
     color: #fff;
+    min-height: 3.2em;
 }
 
 .security-section .feature-card p {
     color: #ccc;
 }
 
+/* Icons in security section */
+.security-section svg {
+    width: 32px;
+    height: 32px;
+}
+
 /* Local Context Section */
 .local-context-section {
-    padding: 80px 0;
+    padding: 180px 0 80px;
 }
 
 .local-context-section h2::after {
@@ -1168,7 +1180,7 @@ h1 {
 
 /* Interactive Section */
 .interactive-section {
-    padding: 100px 0;
+    padding: 160px 0;
     background-color: #f9f9f9;
 }
 
@@ -1286,7 +1298,7 @@ h1 {
 .landing-wall-section {
     position: relative;
     padding: 160px 0;
-    min-height: 700px;
+    min-height: 850px;
     background-color: #000;
     background-image: url('assets/landing_wall.png');
     background-size: cover;
@@ -1384,14 +1396,14 @@ h1 {
 
 /* Admin Panel Section */
 .admin-panel-section {
-    padding: 100px 0;
-    background: #fff;
+    padding: 160px 0;
+    background: transparent;
 }
 
 .admin-frame {
-    background: #F4F4F4;
-    border-radius: 48px;
-    padding: 80px;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
     overflow: hidden;
 }
 
@@ -1400,6 +1412,10 @@ h1 {
     grid-template-columns: 1fr 1.2fr;
     gap: 60px;
     align-items: center;
+}
+
+.admin-content {
+    text-align: left;
 }
 
 .admin-content h2 {
@@ -1430,13 +1446,17 @@ h1 {
 
 .admin-visual {
     position: relative;
+    justify-self: end;
 }
 
 .admin-mockup-img {
     width: 100%;
     height: auto;
-    border-radius: 20px;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    transform: scale(1.05);
+    transform-origin: center right;
 }
 
 @media (max-width: 1024px) {
