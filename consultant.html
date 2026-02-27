@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        body { font-family: 'Montserrat', sans-serif; }
         .consultant-hero {
             padding: 160px 0 120px;
             text-align: center;
@@ -72,43 +73,52 @@
         }
 
         .feature-card {
-            background: #F8F9FA;
+            background-color: #F5F5F5;
+            background-size: cover;
+            background-position: center;
             padding: 3rem;
             border-radius: 32px;
             text-align: left;
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             transition: var(--transition);
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            justify-content: flex-end;
+            min-height: 280px;
+            position: relative;
+            overflow: hidden;
         }
 
         .feature-card:hover {
             transform: translateY(-5px);
-            background: #fff;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
-            border-color: rgba(198, 12, 127, 0.1);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(198, 12, 127, 0.2);
         }
 
         .feature-card h3 {
-            font-size: 1.75rem;
-            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            color: #111;
+        }
+
+        .consultant-features .feature-card h3 {
+            font-size: 24px;
+            font-weight: 500;
             color: #111;
             margin: 0;
         }
 
         /* Business Effect Section */
         .business-effect {
-            padding: 100px 0;
-            background-color: #f0f2f5;
+            padding: 180px 0;
+            background-image: url('assets/Bussines_effect.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .effect-title {
-            text-align: center;
+            text-align: left;
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 4rem;
@@ -117,39 +127,41 @@
 
         .effect-list {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0;
             list-style: none;
             padding: 0;
+            text-align: left;
         }
 
         .effect-item {
-            background: #fff;
-            padding: 2rem 3rem;
-            border-radius: 20px;
-            margin-bottom: 1.5rem;
+            background: transparent;
+            padding: 0;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             gap: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
             transition: var(--transition);
+            text-align: left;
+        }
+
+        .effect-item::before {
+            display: none;
         }
 
         .effect-item:hover {
             transform: translateX(10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-        }
-
-        .effect-item::before {
-            content: "✦";
-            color: var(--primary);
-            font-size: 1.5rem;
-            font-weight: 700;
         }
 
         .effect-text {
             font-size: 1.25rem;
             font-weight: 500;
             color: #333;
+            text-align: left;
+        }
+
+        .effect-cta {
+            margin-top: 2rem;
+            display: inline-block;
         }
 
         /* Responsive */
@@ -194,21 +206,17 @@
     <section class="consultant-features">
         <div class="consultant-container">
             <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">🤖</span>
-                    <h3>Консультации 24/7 без ожидания</h3>
+                <div class="feature-card" style="background-image: url('assets/consultant_1.png');">
+                    <h3>Консультации 24/7<br>без ожидания</h3>
                 </div>
-                <div class="feature-card">
-                    <span class="feature-icon">🧠</span>
-                    <h3>Глубокое понимание финансовых продуктов</h3>
+                <div class="feature-card" style="background-image: url('assets/consultant_2.png');">
+                    <h3>Глубокое понимание<br>финансовых продуктов</h3>
                 </div>
-                <div class="feature-card">
-                    <span class="feature-icon">💬</span>
-                    <h3>Работа через Telegram</h3>
+                <div class="feature-card" style="background-image: url('assets/consultant_3.png');">
+                    <h3>Работа через<br>Telegram</h3>
                 </div>
-                <div class="feature-card">
-                    <span class="feature-icon">📉</span>
-                    <h3>Снижение нагрузки на контакт-центр</h3>
+                <div class="feature-card" style="background-image: url('assets/consultant_4.png');">
+                    <h3>Снижение нагрузки<br>на контакт-центр</h3>
                 </div>
             </div>
         </div>
@@ -228,6 +236,7 @@
                     <span class="effect-text">Быстрые и точные ответы без участия операторов</span>
                 </div>
             </div>
+            <a href="https://t.me/BankFuture_info" target="_blank" rel="noopener" class="btn btn-primary effect-cta">Перейти в Telegram-бот</a>
         </div>
     </section>
 

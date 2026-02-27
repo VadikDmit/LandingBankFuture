@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        body { font-family: 'Montserrat', sans-serif; }
         .tracker-hero {
             padding: 160px 0 120px;
             text-align: center;
@@ -77,13 +78,13 @@
 
         .bt-card {
             background: #fff;
-            padding: 4rem;
+            padding: 2.67rem;
             border-radius: 40px;
             text-align: left;
             border: 1px solid rgba(0, 0, 0, 0.04);
             transition: var(--transition);
             display: flex;
-            align-items: center;
+            align-items: stretch;
             gap: 4rem;
             width: 100%;
         }
@@ -97,6 +98,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 0;
         }
 
         .bt-card-visual img {
@@ -106,6 +108,16 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
+        .bt-card-large .bt-card-visual {
+            align-items: center;
+        }
+
+        .bt-card-large .bt-card-visual img {
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
         .bt-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
@@ -113,7 +125,7 @@
 
         .bt-card-small {
             flex-direction: column;
-            padding: 3.5rem;
+            padding: 2.33rem;
             align-items: flex-start;
             gap: 2.5rem;
         }
@@ -139,7 +151,8 @@
         }
 
         .bt-card p {
-            font-size: 1.15rem;
+            font-size: 16px;
+            font-weight: 500;
             color: #444;
             line-height: 1.6;
             margin-bottom: 1.5rem;
@@ -156,7 +169,8 @@
             padding-left: 1.75rem;
             margin-bottom: 1rem;
             color: #555;
-            font-size: 1.1rem;
+            font-size: 16px;
+            font-weight: 400;
             line-height: 1.4;
         }
 
@@ -170,7 +184,7 @@
         /* How it Works Section Styles */
         .tracker-how-it-works {
             padding: 120px 0;
-            background-color: #F8F9FA;
+            background-color: #F5F5F5;
         }
 
         .thiw-grid {
@@ -181,7 +195,7 @@
         }
 
         .thiw-content h2 {
-            font-size: 3rem;
+            font-size: 48px;
             font-weight: 700;
             margin-bottom: 2rem;
             color: #000;
@@ -190,7 +204,7 @@
         .thiw-content p {
             font-size: 1.2rem;
             color: #666;
-            margin-bottom: 3.5rem;
+            margin-bottom: 2rem;
             line-height: 1.6;
         }
 
@@ -200,27 +214,28 @@
         }
 
         .tracker-step-item {
-            padding: 1.2rem 0;
-            border-top: 1px solid #e0e0e0;
+            padding: 12px 0;
             display: flex;
-            align-items: center;
-            gap: 20px;
+            align-items: flex-end;
+            gap: 0;
             transition: var(--transition);
         }
 
-        .tracker-step-item:last-child {
-            border-bottom: 1px solid #e0e0e0;
-        }
-
         .tracker-step-number {
-            font-size: 1.2rem;
+            font-size: 3.2rem;
             font-weight: 700;
-            color: #000;
-            width: 30px;
+            color: transparent;
+            -webkit-text-stroke: 2px #999;
+            opacity: 0.4;
+            min-width: 2ch;
+            display: inline-flex;
+            align-items: flex-end;
+            flex-shrink: 0;
+            line-height: 1;
         }
 
         .tracker-step-text {
-            font-size: 1.25rem;
+            font-size: 18px;
             font-weight: 500;
             color: #333;
         }
@@ -239,18 +254,36 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
+        /* Divider between How it works and Business results */
+        .thiw-br-divider-wrap {
+            display: block;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 2rem;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin: 0 auto;
+        }
+        .thiw-br-divider {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 0;
+            width: 100%;
+        }
+
         /* Tracker Business Results Section */
         .tracker-business-results {
             padding: 120px 0;
-            background-color: #fff;
+            background-color: #F5F5F5;
             text-align: center;
         }
 
         .tbr-title {
-            font-size: 3rem;
+            font-size: 48px;
             font-weight: 700;
             margin-bottom: 4rem;
             color: #000;
+            text-align: left;
         }
 
         .tbr-grid {
@@ -280,7 +313,7 @@
         .tbr-icon {
             width: 64px;
             height: 64px;
-            background: #fff;
+            background: transparent;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -292,8 +325,8 @@
         }
 
         .tbr-item h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-size: 20px;
+            font-weight: 500;
             color: #111;
             line-height: 1.4;
         }
@@ -323,7 +356,7 @@
             }
 
             .bt-card {
-                padding: 2rem;
+                padding: 1.33rem;
                 gap: 2rem;
             }
         }
@@ -361,7 +394,7 @@
                 <!-- Large Card -->
                 <div class="bt-card bt-card-large">
                     <div class="bt-card-content">
-                        <h3>📊 Предиктивная аналитика</h3>
+                        <h3>Предиктивная аналитика</h3>
                         <p>Система не просто собирает цифры, она предсказывает результат и указывает на узкие места.</p>
                         <ul>
                             <li>Прогноз выполнения плана на основе текущей динамики</li>
@@ -378,7 +411,7 @@
                 <!-- Small Card 1 -->
                 <div class="bt-card bt-card-small">
                     <div class="bt-card-content">
-                        <h3>⚡️ Мгновенные уведомления</h3>
+                        <h3>Мгновенные<br>уведомления</h3>
                         <p>Будьте в курсе важных событий без задержек.</p>
                         <ul>
                             <li>Сигналы об аномальных отклонениях в продажах</li>
@@ -391,7 +424,7 @@
                 <!-- Small Card 2 -->
                 <div class="bt-card bt-card-small">
                     <div class="bt-card-content">
-                        <h3>🤖 Умные подсказки руководителю</h3>
+                        <h3>Умные подсказки руководителю</h3>
                         <p>ИИ анализирует поведение сети и дает готовые рекомендации.</p>
                         <ul>
                             <li>Какие действия предпринять для активации агентов</li>
@@ -413,19 +446,19 @@
 
                     <ul class="tracker-steps-list">
                         <li class="tracker-step-item">
-                            <span class="tracker-step-number">1.</span>
+                            <span class="tracker-step-number">1</span>
                             <span class="tracker-step-text">Подключение API вашей CRM к платформе</span>
                         </li>
                         <li class="tracker-step-item">
-                            <span class="tracker-step-number">2.</span>
+                            <span class="tracker-step-number">2</span>
                             <span class="tracker-step-text">Настройка порогов и ключевых метрик</span>
                         </li>
                         <li class="tracker-step-item">
-                            <span class="tracker-step-number">3.</span>
+                            <span class="tracker-step-number">3</span>
                             <span class="tracker-step-text">Запуск Telegram-бота для руководителей</span>
                         </li>
                         <li class="tracker-step-item">
-                            <span class="tracker-step-number">4.</span>
+                            <span class="tracker-step-number">4</span>
                             <span class="tracker-step-text">Получение аналитики и ИИ-советов 24/7</span>
                         </li>
                     </ul>
@@ -437,6 +470,10 @@
             </div>
         </div>
     </section>
+
+    <div class="tracker-container thiw-br-divider-wrap">
+        <hr class="thiw-br-divider">
+    </div>
 
     <section class="tracker-business-results">
         <div class="tracker-container">
@@ -487,7 +524,7 @@
         </div>
     </section>
 
-    <footer style="padding: 60px 0; text-align: center; border-top: 1px solid #eee; background: #fff;">
+    <footer style="padding: 60px 0; text-align: center; border-top: 1px solid #eee; background: #F5F5F5;">
         <div class="container">
             <p>&copy; 2026 BankFuture. Все права защищены.</p>
         </div>

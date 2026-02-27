@@ -68,6 +68,22 @@ body {
     letter-spacing: -0.02em;
 }
 
+.logo-img {
+    display: block;
+}
+
+.logo-img--purple {
+    display: none;
+}
+
+.navbar.scrolled .logo-img--white {
+    display: none;
+}
+
+.navbar.scrolled .logo-img--purple {
+    display: block;
+}
+
 .nav-links {
     display: flex;
     list-style: none;
@@ -221,9 +237,10 @@ h1 {
 }
 
 .use-cases-header h2 {
-    font-size: 3rem;
-    font-weight: 500;
+    font-size: 48px;
+    font-weight: 700;
     margin: 20px 0;
+    margin-top: 0.5rem;
     line-height: 1.1;
 }
 
@@ -270,7 +287,7 @@ h1 {
 }
 
 .case-info h3 {
-    font-size: 1.3rem;
+    font-size: 20px;
     font-weight: 500;
     margin-bottom: 12px;
     line-height: 1.3;
@@ -318,6 +335,11 @@ h1 {
 
 .case-visual.visual-light .case-img {
     object-fit: contain;
+}
+
+/* Заполнить фрейм картинкой для карточки ИИ-бизнес трекер */
+.use-cases-content .case-card:nth-child(4) .case-visual.visual-light .case-img {
+    object-fit: cover;
 }
 
 /* Maximizing Advisor image size without changing card height (shifting space from margin) */
@@ -636,9 +658,9 @@ h1 {
 }
 
 .product-hero h1 {
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     margin-bottom: 1.5rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.05em;
     text-transform: none;
     color: #000;
@@ -920,6 +942,10 @@ h1 {
     background: #F5F5F5 !important;
 }
 
+.capabilities-section h2 {
+    font-size: 48px;
+}
+
 .capabilities-section h2::after {
     display: none;
 }
@@ -943,13 +969,17 @@ h1 {
     background: #FFFFFF;
 }
 
+.capabilities-section .feature-grid .feature-card:nth-child(1) .card-text {
+    padding-top: 0.8rem;
+}
+
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 .feature-card h3 {
-    font-size: 1.5rem;
+    font-size: 20px;
     margin-bottom: 1rem;
     color: var(--text-main);
 }
@@ -1043,6 +1073,7 @@ h1 {
 }
 
 .security-section h2 {
+    font-size: 48px;
     color: #fff;
 }
 
@@ -1070,6 +1101,7 @@ h1 {
 }
 
 .security-section .feature-card h3 {
+    font-size: 20px;
     color: #fff;
     min-height: 3.2em;
 }
@@ -1087,6 +1119,10 @@ h1 {
 /* Local Context Section */
 .local-context-section {
     padding: 180px 0 80px;
+}
+
+.local-context-section h2 {
+    font-size: 48px;
 }
 
 .local-context-section h2::after {
@@ -1135,7 +1171,7 @@ h1 {
 }
 
 .local-context-section .feature-card h3 {
-    font-size: 1.5rem;
+    font-size: 20px;
     margin-bottom: 0.75rem;
 }
 
@@ -1160,7 +1196,7 @@ h1 {
     justify-content: space-between;
     gap: 30px;
     margin-top: 0;
-    padding: 100px 0;
+    padding: 160px 0 100px;
     width: 100%;
 }
 
@@ -1473,7 +1509,7 @@ h1 {
 /* CTA Section Styles */
 .bb-cta-section {
     padding: 80px 0 120px;
-    background-color: #fff;
+    background: linear-gradient(to bottom, #F5F5F5 50%, #ffffff 50%);
 }
 
 .cta-card {
@@ -1494,7 +1530,7 @@ h1 {
 }
 
 .cta-card h2 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: 48px;
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.1;
@@ -1502,7 +1538,7 @@ h1 {
 }
 
 .cta-card p {
-    font-size: 1.25rem;
+    font-size: 18px;
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 3rem;
     line-height: 1.6;
@@ -1517,36 +1553,37 @@ h1 {
 }
 
 .cta-btn-primary {
-    background: #fff;
-    color: #000;
-    padding: 1.2rem 2.5rem;
-    border-radius: 12px;
+    background: #C60C7F;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
     font-weight: 600;
     text-decoration: none;
     transition: var(--transition);
+    display: inline-block;
 }
 
 .cta-btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
-    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    background: #A50A6A;
 }
 
 .cta-btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    padding: 1.2rem 2.5rem;
-    border-radius: 12px;
+    background: transparent;
+    color: #C60C7F;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
     font-weight: 600;
     text-decoration: none;
     transition: var(--transition);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid #C60C7F;
+    display: inline-block;
 }
 
 .cta-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-3px);
+    background: rgba(198, 12, 127, 0.1);
+    transform: translateY(-2px);
 }
 
 /* Geometric Decorations */
@@ -1621,9 +1658,10 @@ h1 {
 }
 
 .about-content h2 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: 48px;
     font-weight: 800;
     line-height: 1.1;
+    margin-top: 0.5rem;
     margin-bottom: 2.5rem;
     letter-spacing: -0.04em;
     color: #000;
@@ -1669,7 +1707,8 @@ h1 {
 }
 
 .contacts-content h2 {
-    font-size: 3rem;
+    font-size: 48px;
+    margin-top: 0.5rem;
     margin-bottom: 50px;
     font-weight: 700;
 }

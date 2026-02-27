@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        body { font-family: 'Montserrat', sans-serif; }
+        h2 { font-size: 48px; font-weight: 700; }
         .bb-hero {
             padding: 160px 0 80px;
             text-align: center;
@@ -39,7 +41,7 @@
         }
 
         .bb-hero h1 {
-            font-size: clamp(3rem, 7vw, 5rem);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 700;
             color: #111;
             line-height: 1.1;
@@ -108,7 +110,7 @@
 
         .bb-card {
             background: #fff;
-            padding: 4rem;
+            padding: 2.67rem;
             border-radius: 40px;
             text-align: left;
             border: 1px solid rgba(0, 0, 0, 0.04);
@@ -155,7 +157,7 @@
 
         .bb-card-small {
             flex-direction: column;
-            padding: 3.5rem;
+            padding: 2.33rem;
             align-items: flex-start;
             gap: 2.5rem;
         }
@@ -171,7 +173,7 @@
         }
 
         .bb-card h3 {
-            font-size: 2rem;
+            font-size: 24px;
             font-weight: 600;
             margin-bottom: 2rem;
             color: #111;
@@ -181,7 +183,7 @@
         }
 
         .bb-card p {
-            font-size: 1.15rem;
+            font-size: 16px;
             color: #444;
             line-height: 1.6;
             margin-bottom: 1.5rem;
@@ -198,7 +200,7 @@
             padding-left: 1.75rem;
             margin-bottom: 1rem;
             color: #555;
-            font-size: 1.1rem;
+            font-size: 16px;
             line-height: 1.4;
         }
 
@@ -231,14 +233,14 @@
         }
 
         .hiw-content h2 {
-            font-size: 3rem;
+            font-size: 48px;
             font-weight: 700;
             margin-bottom: 2rem;
             color: #000;
         }
 
         .hiw-content p {
-            font-size: 1.2rem;
+            font-size: 18px;
             color: #666;
             margin-bottom: 3.5rem;
             line-height: 1.6;
@@ -258,8 +260,12 @@
             transition: var(--transition);
         }
 
+        .step-item:first-child {
+            border-top: none;
+        }
+
         .step-item:last-child {
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: none;
         }
 
         .step-number {
@@ -270,7 +276,7 @@
         }
 
         .step-text {
-            font-size: 1.25rem;
+            font-size: 18px;
             font-weight: 500;
             color: #333;
         }
@@ -280,13 +286,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background: transparent;
         }
 
         .hiw-visual img {
             max-width: 100%;
             height: auto;
+            object-fit: contain;
             border-radius: 40px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: none;
         }
 
         @media (max-width: 968px) {
@@ -296,7 +304,7 @@
             }
 
             .hiw-content h2 {
-                font-size: 2.5rem;
+                font-size: 32px;
             }
 
             .hiw-visual {
@@ -314,22 +322,40 @@
             }
 
             .bb-card {
-                padding: 2.5rem;
+                padding: 1.67rem;
             }
+        }
+
+        /* Divider between How it works and Business results */
+        .hiw-br-divider-wrap {
+            display: block;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 2rem;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin: 0 auto;
+        }
+        .hiw-br-divider {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 0;
+            width: 100%;
         }
 
         /* Business Results Section */
         .business-results {
             padding: 120px 0;
-            background-color: #fff;
+            background-color: #F5F5F5;
             text-align: center;
         }
 
         .br-title {
-            font-size: 3rem;
+            font-size: 48px;
             font-weight: 700;
             margin-bottom: 4rem;
             color: #000;
+            text-align: left;
         }
 
         .br-grid {
@@ -352,9 +378,9 @@
         }
 
         .br-icon {
-            width: 64px;
-            height: 64px;
-            background: #F8F9FA;
+            width: 56px;
+            height: 56px;
+            background: #fff;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -365,6 +391,11 @@
             transition: var(--transition);
         }
 
+        .br-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
         .br-item:hover .br-icon {
             background: #fff;
             box-shadow: 0 10px 25px rgba(198, 12, 127, 0.1);
@@ -372,8 +403,8 @@
         }
 
         .br-item h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-size: 18px;
+            font-weight: 400;
             color: #111;
             line-height: 1.4;
             max-width: 200px;
@@ -455,7 +486,7 @@
                 <!-- Small Card 1 -->
                 <div class="bb-card bb-card-small">
                     <div class="bb-card-content">
-                        <h3>🔹 Гибкая настройка под задачи</h3>
+                        <h3>Гибкая настройка под задачи</h3>
                         <p>Настраивайте бота под конкретные сценарии:</p>
                         <ul>
                             <li>первичная консультация клиентов</li>
@@ -465,27 +496,25 @@
                         </ul>
                         <p><strong>Без кода.</strong> Всё — через понятный интерфейс.</p>
                     </div>
-                    <div class="bb-card-visual">
-                        <img src="/Users/vadimdmitriev/.gemini/antigravity/brain/07382456-2318-4fcd-8519-c386ff07bf95/bot_scenarios_ui_new_1769786630461.png"
-                            alt="Bot Scenarios UI">
+                    <div class="bb-card-visual bb-card-visual--no-bg">
+                        <img src="assets/Set_bot.png" alt="Гибкая настройка под задачи">
                     </div>
                 </div>
 
                 <!-- Small Card 2 -->
                 <div class="bb-card bb-card-small">
                     <div class="bb-card-content">
-                        <h3>🔹 Личный кабинет специалиста</h3>
+                        <h3>Личный кабинет специалиста</h3>
                         <p>В личном кабинете вы получаете полный контроль:</p>
                         <ul class="highlight-list">
-                            <li>📊 Список клиентов, которые взаимодействовали с вашим ботом</li>
-                            <li>👤 История обращений и диалогов</li>
-                            <li>📈 Статистика активности и вовлечённости</li>
-                            <li>⚙️ Управление ботами и их настройками</li>
+                            <li>Список клиентов, которые взаимодействовали с вашим ботом</li>
+                            <li>История обращений и диалогов</li>
+                            <li>Статистика активности и вовлечённости</li>
+                            <li>Управление ботами и их настройками</li>
                         </ul>
                     </div>
-                    <div class="bb-card-visual">
-                        <img src="/Users/vadimdmitriev/.gemini/antigravity/brain/07382456-2318-4fcd-8519-c386ff07bf95/specialist_dashboard_ui_new_1769786646684.png"
-                            alt="Specialist Dashboard UI">
+                    <div class="bb-card-visual bb-card-visual--no-bg">
+                        <img src="assets/LK_Spec2.jpg" alt="Личный кабинет специалиста">
                     </div>
                 </div>
             </div>
@@ -529,6 +558,10 @@
             </div>
         </div>
     </section>
+
+    <div class="bb-container hiw-br-divider-wrap">
+        <hr class="hiw-br-divider">
+    </div>
 
     <section class="business-results">
         <div class="bb-container">
@@ -644,8 +677,8 @@
                     <h2>Создайте своего финансового ИИ-бота уже сегодня</h2>
                     <p>Начните работать с клиентами на новом уровне вместе с BankFuture.</p>
                     <div class="cta-btns">
-                        <a href="#" class="cta-btn-primary">👉 Создать бота</a>
-                        <a href="#" class="cta-btn-secondary">👉 Получить консультацию</a>
+                        <a href="#" class="cta-btn-primary">Создать бота</a>
+                        <a href="#" class="cta-btn-secondary">Получить консультацию</a>
                     </div>
                 </div>
             </div>
